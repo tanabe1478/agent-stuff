@@ -1,0 +1,24 @@
+{
+  "name": "@tanabe1478/agent-stuff",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal Pi coding agent extensions, skills, prompts, and themes",
+  "type": "module",
+  "keywords": [
+    "pi-package"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions/*.ts"
+    ],
+    "skills": [
+      "./skills"
+    ],
+    "themes": [
+      "./themes"
+    ],
+    "prompts": [
+      "./commands"
+    ]
+  }
+}

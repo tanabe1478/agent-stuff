@@ -4,6 +4,9 @@
   "private": true,
   "description": "Personal Pi coding agent extensions, skills, prompts, and themes",
   "type": "module",
+  "scripts": {
+    "test": "node tests/smoke.mjs"
+  },
   "keywords": [
     "pi-package"
   ],
@@ -20,5 +23,11 @@
     "prompts": [
       "./commands"
     ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
   }
 }

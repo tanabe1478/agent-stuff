@@ -35,7 +35,9 @@ try {
   const loaded = loader.getExtensions();
   assert.deepEqual(loaded.errors, []);
   extensions = loaded.extensions;
-  assert.equal(extensions.length, 2);
+  assert.equal(extensions.length, 6);
+  assert.deepEqual(extensions.flatMap(e => [...e.commands.keys()]).sort(),
+    ["answer", "btw", "end-review", "files", "goal", "review", "todos"]);
   assert.deepEqual(loader.getPrompts().diagnostics, []);
   assert.deepEqual(loader.getPrompts().prompts.map(p => p.name), ["discuss"]);
   assert.deepEqual(loader.getSkills().skills, []);
@@ -64,7 +66,10 @@ try {
     cwd: temp, mode: "print", hasUI: false, model, sessionManager,
     isIdle: () => true, waitForIdle: async () => {},
     getSystemPrompt: () => "You are a test assistant.",
-    ui: { notify: (message, level) => notifications.push({ message, level }) },
+    ui: {
+      notify: (message, level) => notifications.push({ message, level }),
+      setStatus() {}, setWidget() {},
+    },
     modelRegistry: {
       getApiKeyAndHeaders: async () => ({ ok: true, apiKey: "smoke-test-only" }),
       streamSimple: (_model, context) => {

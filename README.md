@@ -1,7 +1,6 @@
 # Agent Stuff
 
 自分用の Pi Coding Agent パッケージ。
-[mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) から、使いたい機能だけを取り込んでいます。
 
 ## 導入済みの機能
 
